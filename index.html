@@ -10,17 +10,33 @@
     <meta name="theme_color" content="#cbf1e8">
     <link rel="icon" href="logo.png">
     <script src="sw.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <style>
+        .status {
+            height: 1vh;
+            width: 50%;
+            background-color: goldenrod;
+            transition: .6s linear;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+
+
 </head>
 
 <body>
+    <div class="status"></div>
     <div id="wrapper">
         <header>
              <img src="Bayern.jpg" alt="Beyern-team - header">  
         </header>
 
         <nav>
-            <a class="menu active" href="index.html">O klubie</a><a class="menu" href="stadion.html">Stadion</a><a class="menu" href="monachium.html">Monachium</a><a class="menu" href="zarzad.html">Zarząd</a>   
+            <a class="menu active" href="index.html">O klubie</a><a class="menu" href="stadion.html">Stadion</a><a class="menu" href="monachium.html">Monachium</a><a class="menu" href="sukcesy.html">Sukcesy</a>   
         </nav>
 
         <section>
@@ -53,7 +69,20 @@
 
     </div>
 
+    <script>
+        const bar = document.querySelector(".status")
+        const statusBar = () => {
+            currentScroll = Math.round(window.scrollY / 
+            (document.documentElement.offsetHeight - 
+            window.innerHeight) * 100);
+            bar.style.width = currentScroll +"%";
 
+            //console.log(currentScroll);
+        }
+
+        window.addEventListener("scroll", statusBar);
+
+    </script>
 
 
 

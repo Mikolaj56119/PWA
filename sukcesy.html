@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Bayern München</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme_color" content="#cbf1e8">
+    <link rel="icon" href="logo.png">
+    <script src="sw.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+
+    <style>
+        .status {
+            height: 1vh;
+            width: 50%;
+            background-color: goldenrod;
+            transition: .6s linear;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="status"></div>
+    <div id="wrapper">
+        <header>
+             <img src ="Bayern.jpg" alt="Beyern-team - header">  
+        </header>
+
+        <nav>
+            <a class="menu" href="index.html">O klubie</a><a class="menu" href="stadion.html">Stadion</a><a class="menu" href="monachium.html">Monachium</a><a class="menu active" href="sukcesy.html">Sukcesy</a>   
+        </nav>
+
+        <section>
+            <article>
+                <h1>Sukcesy</h1>
+            <p>Bayern jest najbardziej utytułowanym niemieckim klubem w historii krajowych rozgrywek, 
+                zdobył m.in. największą liczbę tytułów mistrzowskich i najwięcej krajowych pucharów.
+                Klub jest także najbardziej utytułowanym klubem niemieckim w rozgrywkach międzynarodowych i zdobył w sumie sześć europejskich pucharów.
+                Bayern jest jednym z czterech klubów, które zdobyły wszystkie trzy najważniejsze europejskie puchary, 
+                a także ostatnim klubem, który zdobył Puchar Europy trzy raz z rzędu.</p>
+            </article>
+            <h2>Trofea międzynarodowe</h2>
+            <article2> 
+                <p><img class="bundes" src="klubowe.jpg" alt="Puchar Klubowe MŚ" </p>
+            <p>Klubowe mistrzostwa świata</p>
+            <p>2013, 2020</p>
+
+            <h3>Trofea Krajowe</h3>
+                <p><img class="bundes" src="bundes.jpg" alt="Trofeum Bundesligi" </p>
+            <p>Mistrzostwo Bundesligi</p>
+            <p>1932, 1969, 1972, 1973, 
+                1974, 1980S, 1981, 1985, 1986, 1987, 1989, 1990, 1994, 1997, 
+                1999, 2000, 2001, 2003, 2005, 2006, 2008, 2010, 2013, 2014, 2015, 
+                2016, 2017, 2018, 2019, 2020, 2021, 2022 </p>
+
+            <p><img class="bundes" src="puchar.jpg" alt="Puchar Niemiec" </p>
+            <p>Puchar Niemiec</p>
+            <p>1957, 1966, 1967, 1969, 1971, 1982, 1984, 
+                1986, 1998, 2000, 2003, 2005, 2006, 2008, 2010, 
+                2013, 2014, 2016, 2019, 2020 </p>
+            
+            <p><img class="bundes" src="superpuchar.jpg" alt="Super Puchar Niemiec" </p>
+            <p>Super Puchar Niemiec</p>
+            <p>1987, 1990, 2010, 2012, 2016, 2017, 2018, 2020, 2021 </p>
+
+            <p><img class="bundes" src="liga.jpg" alt="Puchar Ligi" </p>
+            <p>Puchar Ligi</p>
+            <p>1997, 1998, 1999, 2000, 2004, 2007 </p>
+            
+            </article2>
+        </section>
+
+    </div>
+
+    <script>
+        const bar = document.querySelector(".status")
+        const statusBar = () => {
+            currentScroll = Math.round(window.scrollY / 
+            (document.documentElement.offsetHeight - 
+            window.innerHeight) * 100);
+            bar.style.width = currentScroll +"%";
+
+            //console.log(currentScroll);
+        }
+
+        window.addEventListener("scroll", statusBar);
+
+    </script>
+
+
+
+
+    <footer>
+        Projekt WSB - Zaawansowane technologie internetowe Mikołaj Mazur i Łukasz Balwierz
+    </footer>
+</body>
